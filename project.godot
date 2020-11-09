@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Slender"
-run/main_scene="res://Player.tscn"
+run/main_scene="res://Forest.tscn"
 config/icon="res://icon.png"
 
 [input]
