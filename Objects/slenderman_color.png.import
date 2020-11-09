@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/fence.png-04907a59e1c4c8f88ea0abb8bac68e95.s3tc.stex"
-path.etc2="res://.import/fence.png-04907a59e1c4c8f88ea0abb8bac68e95.etc2.stex"
+path.s3tc="res://.import/slenderman_color.png-af0f5c0eb2086a7fa6f37967781fdec4.s3tc.stex"
+path.etc2="res://.import/slenderman_color.png-af0f5c0eb2086a7fa6f37967781fdec4.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/fence.png"
-dest_files=[ "res://.import/fence.png-04907a59e1c4c8f88ea0abb8bac68e95.s3tc.stex", "res://.import/fence.png-04907a59e1c4c8f88ea0abb8bac68e95.etc2.stex" ]
+source_file="res://Objects/slenderman_color.png"
+dest_files=[ "res://.import/slenderman_color.png-af0f5c0eb2086a7fa6f37967781fdec4.s3tc.stex", "res://.import/slenderman_color.png-af0f5c0eb2086a7fa6f37967781fdec4.etc2.stex" ]
 
 [params]
 

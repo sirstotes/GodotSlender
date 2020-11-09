@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://KinematicBody.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
+walk_accel = 5.0
+max_walk_speed = 100.0
+jump_speed = 10.0
+gravity = -1.0
+friction = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Viewport" type="Camera" parent="."]
+current = true
