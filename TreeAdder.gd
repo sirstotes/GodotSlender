@@ -9,5 +9,6 @@ func _ready():
 	var new : Spatial = load("res://Objects/Trees/Tree"+String(type)+".tscn").instance()
 	new.transform.origin = Vector3(0, 0, 0)
 	new.rotate_y(randf()*PI)
+	new.scale_object_local(Vector3(1.2+randf()*0.5, 1.2+randf()*0.5, 1.2+randf()*0.5))
 	add_child(new)
 	print(new)

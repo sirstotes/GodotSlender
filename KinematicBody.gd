@@ -5,7 +5,7 @@ export(float) var max_walk_speed = 5
 export(float) var jump_speed = 0
 export(float) var gravity = -50
 export(float) var sensitivity = 0.2
-export(float) var friction = 1000
+export(float) var friction = 100
 
 var velocity = Vector3()
 var looking = Vector3()

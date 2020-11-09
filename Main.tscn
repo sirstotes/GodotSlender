@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/Fence.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/tent2.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://TreeAdder.gd" type="Script" id=5]
 [ext_resource path="res://Objects/Trees/Tree1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/floor.png" type="Texture" id=7]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 200, 200 )
@@ -16,21 +17,6 @@ albedo_color = Color( 0.141176, 0.533333, 0.105882, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 10, 0.001, 10 )
-
-[sub_resource type="ProceduralSky" id=4]
-sky_top_color = Color( 0.0862745, 0.0784314, 0.352941, 1 )
-sky_horizon_color = Color( 1, 0.576471, 0.0784314, 1 )
-sky_curve = 0.0731029
-ground_bottom_color = Color( 0.00784314, 0.0392157, 0.0745098, 1 )
-ground_horizon_color = Color( 0.14902, 0.0666667, 0, 1 )
-sun_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="Environment" id=5]
-background_mode = 2
-background_sky = SubResource( 4 )
-background_color = Color( 0.117647, 0, 0, 1 )
-background_energy = 0.12
-fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
 
 [node name="Main" type="Spatial"]
 
@@ -524,14 +510,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7256, 1, -50 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2766, 1, -50 )
 
 [node name="tent" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.89399, 0, -0.448087, 0, 1, 0, 0.448087, 0, 0.89399, 2.61056, -9.53674e-07, 3.98004 )
+
+[node name="StaticBody" type="StaticBody" parent="tent"]
 
 [node name="tent2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.737383, 0, -0.675474, 0, 1, 0, 0.675474, 0, 0.737383, 1.00903, 0.066, -3.69266 )
 
 [node name="tent3" parent="." instance=ExtResource( 3 )]
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.394725, 0.357276, 0.84649, -0.150991, 0.933999, -0.323802, -0.906308, -2.70101e-08, 0.422618, 8.6319, 3.87064, 3.49428 )
-environment = SubResource( 5 )
+transform = Transform( 0.995233, 0, 0.0975308, 0, 1, 0, -0.0975308, 0, 0.995233, -3.45681, 0.0660005, 1.89794 )
 
 [node name="Trees" type="Spatial" parent="."]
 
@@ -575,154 +562,154 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58601, 9.53674e-07, 2.67913
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree6" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree7" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3682, 9.53674e-07, 4.18694 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree7" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree8" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8654, 1.43051e-06, 10.4627 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree8" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree9" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2812, 1.43051e-06, 6.61149 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree9" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree10" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6072, 1.43051e-06, 14.0814 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree10" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
+
+[node name="remove2" parent="Trees/Tree10" instance=ExtResource( 6 )]
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, -11.5635, -9.53674e-07, -14.6441 )
 
 [node name="Tree11" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9508, 1.43051e-06, 14.3451 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree11" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree12" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8377, 4.76837e-07, 10.2191 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree12" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree13" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2088, 4.76837e-07, 17.1528 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree13" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree14" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2424, 0, 13.5717 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree14" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree15" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5654, 0, 11.1404 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree15" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree16" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1533, 4.76837e-07, 8.12759 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree16" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree17" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7241, 9.53674e-07, 8.12812 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree17" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree18" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3997, 9.53674e-07, 9.89253 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree18" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree19" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9131, 9.53674e-07, 4.94892 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree19" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree20" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0899, 0, 3.43381 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree20" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree21" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.982, 0, -0.239511 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree21" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree22" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8874, 0, 1.60064 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree22" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree23" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7291, 0, -0.281323 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree23" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree24" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08164, 0, -3.84345 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree24" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree25" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8938, 0, -3.54918 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree25" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree26" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3199, 0, -3.61357 )
 script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree26" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0 )
 
 [node name="Tree27" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1707, 4.76837e-07, -0.562606 )
 script = ExtResource( 5 )
-
-[node name="remove" parent="Trees/Tree27" instance=ExtResource( 6 )]
-transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
 
 [node name="Tree28" type="Spatial" parent="Trees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6599, 4.76837e-07, 3.55277 )
@@ -730,6 +717,13 @@ script = ExtResource( 5 )
 
 [node name="remove" parent="Trees/Tree28" instance=ExtResource( 6 )]
 transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59106, 0 )
+walk_accel = 1000.0
+max_walk_speed = 10.0
+gravity = -10.0
+friction = 1000.0
 
 [editable path="tent"]
 
