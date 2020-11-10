@@ -29,4 +29,10 @@ material/0 = SubResource( 2 )
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 1.4, 0, 0, 0, 0.5, 0, 1.28665, 0 )
+
+[node name="RightNode" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41109, -0.595497 )
+
+[node name="LeftNode" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41109, 0.60104 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

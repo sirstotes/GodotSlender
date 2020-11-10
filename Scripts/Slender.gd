@@ -8,10 +8,12 @@ export(float) var movement_speed = 10
 
 onready var nav = get_parent()
 onready var player = $"../../Player"
+var right 
+var left
 
 func _ready():
-	pass # Replace with function body.
-
+	right = get_node("RightNode")
+	left = get_node("LeftNode")
 
 func _process(delta):
 	if path_node < path.size():
@@ -31,12 +33,12 @@ func _process(delta):
 
 func _physics_process(delta):
 	var space_state = get_world().direct_space_state
-	var result = space_state.intersect_ray(self.global_transform.origin, player.global_transform.origin, [self])
-	if get_node("VisibilityNotifier").is_on_screen() and (result['shape'] == 0):
+	var resultleft = space_state.intersect_ray(left.global_transform.origin, player.global_transform.origin, [self])
+	var resultright = space_state.intersect_ray(right.global_transform.origin, player.global_transform.origin, [self])
+	if get_node("VisibilityNotifier").is_on_screen() and ((resultleft['shape'] == 0) or (resultright['shape'] == 0)):
 		is_visible = true
 	else:
 		is_visible = false
-	print(result['shape'])
 func move_to(target_pos):
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_node = 0
