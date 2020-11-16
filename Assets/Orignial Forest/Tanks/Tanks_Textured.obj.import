@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Tanks_Textured.obj-4e1390b10acb1468abce3d441f843656.mesh"
+
+[deps]
+
+files=[ "res://.import/Tanks_Textured.obj-4e1390b10acb1468abce3d441f843656.mesh" ]
+
+source_file="res://Assets/Orignial Forest/Tanks/Tanks_Textured.obj"
+dest_files=[ "res://.import/Tanks_Textured.obj-4e1390b10acb1468abce3d441f843656.mesh", "res://.import/Tanks_Textured.obj-4e1390b10acb1468abce3d441f843656.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

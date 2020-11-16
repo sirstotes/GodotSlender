@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Player_env.tres" type="Environment" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -14,3 +15,10 @@ shape = SubResource( 1 )
 
 [node name="Viewport" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+environment = ExtResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Viewport"]
+light_energy = 0.33
+light_indirect_energy = 0.0
+spot_range = 69.784
+spot_angle = 28.4379

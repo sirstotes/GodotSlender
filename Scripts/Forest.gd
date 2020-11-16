@@ -23,16 +23,11 @@ func _ready():
 	img.load("res://Scripts/paths.jpg")
 	img.lock()
 	for i in range(8000):
-		find_tree()
-	for tree in trees:
-		print('adding tree')
+		var tree = find_tree()
 		var instancedtree = treetypes[tree[1]].instance()
-		instancedtree.add_to_group("tree")
-		print(tree[0])
 		instancedtree.translate(tree[0])
 		navmesh.add_child(instancedtree)
 	img.save_png("res://outlocked.png")
-
 func draw_circle(x, y, radius, color):
 	var magnitude = radius * radius
 	for i in range(-radius, radius):
@@ -53,7 +48,4 @@ func find_tree():
 			x = (x/tree_scale) - (img.get_width()/(tree_scale * 2))
 			y = (y/tree_scale) - (img.get_height()/(tree_scale * 2))
 			var treetype = rng.randi_range(0, len(treetypes) - 1)
-			trees.append([Vector3(x, 0, y), treetype])
-			break
-
-				
+			return [Vector3(x, 0, y), treetype]
